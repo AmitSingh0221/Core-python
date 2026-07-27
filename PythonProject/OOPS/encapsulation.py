@@ -51,9 +51,9 @@ print(p.get_dob())
 print(Person.AVG_AGE)
 
 p1 = Person()
-p1.set_name("Uday")
+p1.set_name("Amit")
 p1.set_address("Indore")
-p1.set_dob(datetime(2000, 5, 15))
+p1.set_dob(datetime(2005, 2, 21))
 
 print("Name:", p1.get_name())
 print("Age:", p1.get_age())
