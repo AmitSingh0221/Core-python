@@ -1,6 +1,4 @@
 from itertools import count
-from logging import exception
-
 
 class InsufficientFundException(Exception):
     def __init__(self, msg):
@@ -51,7 +49,7 @@ acc.set_balance(50000)
 print(acc.get_balance())
 
 try:
-    acc.deposit(11000)
+    acc.deposit(111000)
     acc.withdrawal(20000)
     acc.withdrawal(20000)
     acc.withdrawal(15000)
