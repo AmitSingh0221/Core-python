@@ -1,0 +1,113 @@
+mysql> crreate database exam;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'crreate database exam' at line 1
+mysql> create database exam;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use exam ;
+Database changed
+mysql> create table exam(examid int primary key, examName varchar(45), examDate varchar(45), totalMarks varchar(45), passingMarks varchar(45));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into exam values(10123, "UI/UX", 25-2-2025, 58, 32);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into exam values(10124, "AI/ML", 26-2-2025, 52, 32);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into exam values(10125, "Compiler Design", 27-2-2025, 47, 32);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into exam values(10126, "Data warehouse and mining", 28-2-2025, 37, 32);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from exam;
++--------+---------------------------+----------+------------+--------------+
+| examid | examName                  | examDate | totalMarks | passingMarks |
++--------+---------------------------+----------+------------+--------------+
+|  10123 | UI/UX                     | -2002    | 58         | 32           |
+|  10124 | AI/ML                     | -2001    | 52         | 32           |
+|  10125 | Compiler Design           | -2000    | 47         | 32           |
+|  10126 | Data warehouse and mining | -1999    | 37         | 32           |
++--------+---------------------------+----------+------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> update exam set examDate=25/07/2026 where examid = 10123;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update exam set examDate=26/07/2026 where examid = 10124;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update exam set examDate=27/07/2026 where examid = 10125;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update exam set examDate=28/07/2026 where examid = 10126;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from exam;
++--------+---------------------------+----------------------+------------+--------------+
+| examid | examName                  | examDate             | totalMarks | passingMarks |
++--------+---------------------------+----------------------+------------+--------------+
+|  10123 | UI/UX                     | 0.001762797912635735 | 58         | 32           |
+|  10124 | AI/ML                     | 0.001833309829220138 | 52         | 32           |
+|  10125 | Compiler Design           | 0.001903821745804540 | 47         | 32           |
+|  10126 | Data warehouse and mining | 0.001974333662388943 | 37         | 32           |
++--------+---------------------------+----------------------+------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> update exam set examDate=25 july 2026 where examid = 10123;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'july 2026 where examid = 10123' at line 1
+mysql> update exam set examDate= 25 "july" 2026 where examid = 10123;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '"july" 2026 where examid = 10123' at line 1
+mysql> update exam set examDate= "25 july 2026" where examid = 10123;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update exam set examDate= "26 july 2026" where examid = 10123;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update exam set examDate= "27 july 2026" where examid = 10123;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update exam set examDate= "28 july 2026" where examid = 10123;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from exam;
++--------+---------------------------+----------------------+------------+--------------+
+| examid | examName                  | examDate             | totalMarks | passingMarks |
++--------+---------------------------+----------------------+------------+--------------+
+|  10123 | UI/UX                     | 28 july 2026         | 58         | 32           |
+|  10124 | AI/ML                     | 0.001833309829220138 | 52         | 32           |
+|  10125 | Compiler Design           | 0.001903821745804540 | 47         | 32           |
+|  10126 | Data warehouse and mining | 0.001974333662388943 | 37         | 32           |
++--------+---------------------------+----------------------+------------+--------------+
+4 rows in set (0.00 sec)
+
+mysql> update exam set examDate= "26 july 2026" where examid = 10124;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update exam set examDate= "26 july 2026" where examid = 10125;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update exam set examDate= "26 july 2026" where examid = 10126;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> selct * from exam;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selct * from exam' at line 1
+mysql> select * from exam;
++--------+---------------------------+--------------+------------+--------------+
+| examid | examName                  | examDate     | totalMarks | passingMarks |
++--------+---------------------------+--------------+------------+--------------+
+|  10123 | UI/UX                     | 28 july 2026 | 58         | 32           |
+|  10124 | AI/ML                     | 26 july 2026 | 52         | 32           |
+|  10125 | Compiler Design           | 26 july 2026 | 47         | 32           |
+|  10126 | Data warehouse and mining | 26 july 2026 | 37         | 32           |

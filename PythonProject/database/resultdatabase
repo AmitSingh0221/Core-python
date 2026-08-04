@@ -1,0 +1,28 @@
+mysql> create database result;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use result;
+Database changed
+mysql> create table result (resultid int, studentid int, percentage varchar(45), grade varchar(45), resultStatus varchar(45), primary key(resultid, studentid));
+                                         #if there are 2 or more primary key then - primary key (ID_1, ID_2)
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert table result into (0196, 0196, 87, "A", "pass");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table result into (0196, 0196, 87, "A", "pass")' at line 1
+mysql> insert into result values(0196, 0196, 87, "A", "pass");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into result values(0197, 0197, 75, "B", "pass");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into result values(0198, 0198, 25, "F", "fail");
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from result;
++----------+-----------+------------+-------+--------------+
+| resultid | studentid | percentage | grade | resultStatus |
++----------+-----------+------------+-------+--------------+
+|      196 |       196 | 87         | A     | pass         |
+|      197 |       197 | 75         | B     | pass         |
+|      198 |       198 | 25         | F     | fail         |
++----------+-----------+------------+-------+--------------+
